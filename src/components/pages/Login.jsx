@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { loginService } from "../../services/Auth.service";
+import useAuth from "../hooks/useAuth";
 
 function Login() {
+
+  const { loginFn } = useAuth();
+
   const [formulario, setFormulario] = useState({
     email: "",
     password: "",
@@ -16,20 +20,21 @@ function Login() {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    console.log(formulario);
+
     loginService(formulario)
-    .then( response => {
-        console.log(response);
-    }).catch( error => {
+    .then(async response => {
+        const token = await response.data.code;
+        loginFn(token);
+    }).catch(error => {
         console.log(error);
-    });
-  }
+    })
+}
 
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mb-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <div className="flex justify-center border-solid border-2 py-2 rounded-2xl shadow-lg bg-orange-100">
+          <div className="flex justify-center border-solid border-2 py-2 mt-16 rounded-2xl shadow-lg bg-orange-100">
             <p className="font-bold text-3xl flex justify-center">
               ECommerce <span className="text-indigo-600 text-4xl">UCamp</span>
             </p>
