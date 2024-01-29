@@ -1,4 +1,30 @@
+import { useState } from "react";
+import { loginService } from "../../services/Auth.service";
+
 function Login() {
+  const [formulario, setFormulario] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (event) => {
+    setFormulario({
+        ...formulario,
+        [event.target.name]: event.target.value
+    });
+  }
+
+  const enviarDatos = (event) => {
+    event.preventDefault();
+    console.log(formulario);
+    loginService(formulario)
+    .then( response => {
+        console.log(response);
+    }).catch( error => {
+        console.log(error);
+    });
+  }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -14,7 +40,10 @@ function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form noValidate className="space-y-6">
+          <form 
+            noValidate 
+            onSubmit={enviarDatos}
+            className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -25,6 +54,8 @@ function Login() {
               <div className="mt-2">
                 <input
                   id="email"
+                  onChange={handleInputChange}
+                  value={formulario.email}
                   name="email"
                   type="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -52,6 +83,8 @@ function Login() {
               <div className="mt-2">
                 <input
                   id="password"
+                  onChange={handleInputChange}
+                  value={formulario.password}
                   name="password"
                   type="password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
