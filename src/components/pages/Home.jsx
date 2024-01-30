@@ -1,6 +1,8 @@
+import ListaProductos from "./ListaProductos";
+
 function HomePage() {
     return ( 
-        <h1>Home</h1>
+        <ListaProductos/>
     );
 }
 

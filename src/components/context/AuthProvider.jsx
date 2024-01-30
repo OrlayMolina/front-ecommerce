@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect( () => {
-        console.log("Requerimos hacer algo para detrminar si ya hay sesion activa...");
+        console.log("Requerimos hacer algo para determinar si ya hay sesion activa...");
         const tknFromStorage = window.localStorage.getItem(import.meta.env.VITE_TKN_NAME);
         if (tknFromStorage) {
             console.log("hay una sesion!!!!");
