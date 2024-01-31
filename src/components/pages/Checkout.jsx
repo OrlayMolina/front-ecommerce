@@ -41,19 +41,19 @@ function Checkout() {
 
   return (
     <div className="p-4 page">
-      <div className="flex">
-        <div className="w-7/12">
+      <div className="flex py-8">
+        <div className="w-7/12 shadow-lg rounded-xl mr-5">
           {products.map((product) => (
             <div className="mb-3" key={product._id}>
               <div className="flex">
-                <div className="w-4/12">
+                <div className="w-4/12 mr-10">
                   <img
                     src={product.image}
                     className="rounded-start h-full"
                     alt="test"
                   />
                 </div>
-                <div className="w-8/12">
+                <div className="w-8/12 mr-2 px-3 py-8">
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
@@ -65,7 +65,7 @@ function Checkout() {
                     </p>
                     <div className="text-start">
                       <button
-                        className="bg-red-500 text-white px-2 py-1 rounded"
+                        className="bg-red-500 text-white px-2 py-1 rounded-md mt-3"
                         type="button"
                         onClick={() => eliminarProducto(product._id)}
                       >
@@ -78,10 +78,10 @@ function Checkout() {
             </div>
           ))}
         </div>
-        <div className="w-5/12">
+        <div className="w-5/12 bg-indigo-200 rounded-lg px-5 py-3">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Resumen de compra</h5>
+              <h5 className="text-xl mb-6 font-bold">Resumen de compra</h5>
               <p className="card-text">
                 Tenemos envíos gratuitos, aprovecha y compra nuestros productos.
               </p>
