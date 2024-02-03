@@ -75,7 +75,9 @@ function Checkout() {
                   </div>
                 </div>
               </div>
+              <hr/>
             </div>
+            
           ))}
         </div>
         <div className="w-5/12 bg-indigo-200 rounded-lg px-5 py-3">
