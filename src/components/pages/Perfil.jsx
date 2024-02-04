@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { profileService, updateProfileService } from "../../services/Auth.service";
+import {
+  profileService,
+  updateProfileService,
+} from "../../services/Auth.service";
 
 function Perfil() {
   const [formulario, setFormulario] = useState({
     email: "",
     password: "",
     name: "",
-    last_name: "",
+    lastname: "",
     active: true,
   });
 
   useEffect(() => {
+    // traer informacion del perfil.....
     profileService()
       .then((res) => {
-        console.log(res);
+        console.log(res.data.data);
         setFormulario(res.data.data);
       })
       .catch((err) => {
@@ -39,7 +43,7 @@ function Perfil() {
       })
       .catch((err) => {
         console.log(err);
-        toast.error(`No se pudo actualizar`);
+        toast.error(`No se pudo acrualizar`);
       });
   };
 
@@ -109,10 +113,10 @@ function Perfil() {
               </label>
               <div className="mt-2">
                 <input
-                  id="last_name"
+                  id="lastname"
                   onChange={handleInputChange}
-                  value={formulario.last_name}
-                  name="last_name"
+                  value={formulario.lastname}
+                  name="lastname"
                   type="text"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
