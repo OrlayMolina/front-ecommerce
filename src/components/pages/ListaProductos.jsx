@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/Ecommerce.service";
+import toast from 'react-hot-toast';
 import { Link } from "react-router-dom";
 
 function ListaProductos() {
@@ -30,7 +31,7 @@ function ListaProductos() {
         }
 
         window.localStorage.setItem('cart', JSON.stringify(cart));
-        alert(`${product.name} agregado al carrito`);
+        toast.success(`${product.name} agregado al carrito`);
   };
 
   return (

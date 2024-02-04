@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { PayPalButtons } from "@paypal/react-paypal-js";
+import toast from 'react-hot-toast';
 
 function Checkout() {
   const [products, setProducts] = useState([]);
@@ -35,14 +37,14 @@ function Checkout() {
         }
       }
     });
-    alert("Producto eliminado del carrito");
+    toast.success("Producto eliminado del carrito");
     loadCart();
   };
 
   return (
     <div className="p-4 page">
       <div className="flex py-8">
-        <div className="w-7/12 shadow-lg rounded-xl mr-5">
+        <div className="w-7/12 shadow-lg rounded-xl mr-5 flex-shrink-0">
           {products.map((product) => (
             <div className="mb-3" key={product._id}>
               <div className="flex">
@@ -75,9 +77,7 @@ function Checkout() {
                   </div>
                 </div>
               </div>
-              <hr/>
             </div>
-            
           ))}
         </div>
         <div className="w-5/12 bg-indigo-200 rounded-lg px-5 py-3">
@@ -100,8 +100,33 @@ function Checkout() {
                   </p>
                 </div>
               </div>
-              <div className="text-end">
-                <p>Aquí pondremos el botón de PayPal</p>
+              <div className="text-end mt-4">
+                <PayPalButtons
+                  forceReRender={[total, "USD", { layout: "vertical" }]}
+                  fundingSource={undefined}
+                  createOrder={(data, actions) => {
+                    return actions.order
+                      .create({
+                        purchase_units: [
+                          {
+                            amount: {
+                              currency_code: "USD",
+                              value: total,
+                            },
+                          },
+                        ],
+                      })
+                      .then((orderId) => {
+                        // Your code here after create the order
+                        return orderId;
+                      });
+                  }}
+                  onApprove={function (data, actions) {
+                    return actions.order.capture().then(function () {
+                      // Your code here after capture the order
+                    });
+                  }}
+                />
               </div>
             </div>
           </div>
