@@ -5,6 +5,10 @@ function RegistroUsuario() {
   const [formulario, setFormulario] = useState({
     email: "",
     password: "",
+    name: '',
+    last_name: '',
+    active: true,
+    dob: ''
   });
 
   const handleInputChange = (event) => {
@@ -21,7 +25,7 @@ function RegistroUsuario() {
 
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mb-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-8 lg:px-8 mb-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="flex justify-center border-solid border-2 py-2 mt-16 rounded-2xl shadow-lg bg-orange-100">
             <p className="font-bold text-3xl flex justify-center">
@@ -35,12 +39,13 @@ function RegistroUsuario() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form noValidate onSubmit={enviarDatos} className="space-y-6">
+            {/* input email */}
             <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Correo Electrónico
+                Email
               </label>
               <div className="mt-2">
                 <input
@@ -54,20 +59,80 @@ function RegistroUsuario() {
               </div>
             </div>
 
+            {/* input name */}
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  onChange={handleInputChange}
+                  value={formulario.name}
+                  name="name"
+                  type="text"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            {/* input last_name */}
+            <div>
+              <label
+                htmlFor="last_name"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Last Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="last_name"
+                  onChange={handleInputChange}
+                  value={formulario.last_name}
+                  name="last_name"
+                  type="text"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            {/* input dob */}
+            <div>
+              <label
+                htmlFor="last_name"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Date of Birthday
+              </label>
+              <div className="mt-2">
+                <input
+                  id="dob"
+                  onChange={handleInputChange}
+                  value={formulario.dob}
+                  name="dob"
+                  type="date"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
             <div>
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Contraseña
+                  Password
                 </label>
                 <div className="text-sm">
                   <a
                     to="/forgot-password"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
-                    ¿Olvidó su contraseña?
+                    ¿Olvidó su password?
                   </a>
                 </div>
               </div>
@@ -88,7 +153,7 @@ function RegistroUsuario() {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Iniciar Sesión
+                Crear Cuenta
               </button>
             </div>
           </form>
