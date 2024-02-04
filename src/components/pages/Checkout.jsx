@@ -41,6 +41,22 @@ function Checkout() {
     loadCart();
   };
 
+  let eliminar = (id) => {
+    console.log("El id es: ", id);
+  
+    // Get cart from local storage
+    let cart = JSON.parse(localStorage.getItem("cart"));
+  
+    // Filter out products with the specified id
+    let newCart = cart.filter((item) => item._id !== id);
+  
+    // Update local storage with the new cart
+    localStorage.setItem("cart", JSON.stringify(newCart));
+  
+    toast.success("Productos eliminados del carrito");
+    loadCart();
+  };
+
   return (
     <div className="p-4 page">
       <div className="flex py-8">
@@ -48,14 +64,14 @@ function Checkout() {
           {products.map((product) => (
             <div className="mb-3" key={product._id}>
               <div className="flex">
-                <div className="w-4/12 mr-10">
+                <div className="w-5/12 mr-10">
                   <img
                     src={product.image}
                     className="rounded-start h-full"
                     alt="test"
                   />
                 </div>
-                <div className="w-8/12 mr-2 px-3 py-8">
+                <div className="w-7/12 mr-2 px-3 py-8">
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
@@ -65,13 +81,21 @@ function Checkout() {
                         Cantidad: {product.quantity}
                       </small>
                     </p>
-                    <div className="text-start">
+                    <div className="text-center mt-2">
                       <button
-                        className="bg-red-500 text-white px-2 py-1 rounded-md mt-3"
+                        className="bg-red-500 text-white px-4 py-1 rounded-md mt-3"
                         type="button"
                         onClick={() => eliminarProducto(product._id)}
                       >
-                        Eliminar
+                        Restar Cantidad
+                      </button>
+
+                      <button
+                        className="bg-red-500 text-white px-2 py-1 rounded-md mt-3 m-4"
+                        type="button"
+                        onClick={() => eliminar(product._id)}
+                      >
+                        Eliminar Producto
                       </button>
                     </div>
                   </div>
@@ -80,7 +104,7 @@ function Checkout() {
             </div>
           ))}
         </div>
-        <div className="w-5/12 bg-indigo-200 rounded-lg px-5 py-3">
+        <div className="w-4/12 rounded-lg px-5 py-3">
           <div className="card">
             <div className="card-body">
               <h5 className="text-xl mb-6 font-bold">Resumen de compra</h5>
@@ -88,7 +112,7 @@ function Checkout() {
                 Tenemos envíos gratuitos, aprovecha y compra nuestros productos.
               </p>
               <div className="flex">
-                <div className="w-6/12">
+                <div className="w-8/12">
                   <p>
                     Subtotal <b>{total} USD</b>
                   </p>
