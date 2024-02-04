@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { signUpService } from "../../services/Auth.service";
 
 function RegistroUsuario() {
   const [formulario, setFormulario] = useState({
@@ -8,7 +9,8 @@ function RegistroUsuario() {
     name: '',
     last_name: '',
     active: true,
-    dob: ''
+    dob: '',
+    notes: ''
   });
 
   const handleInputChange = (event) => {
@@ -20,7 +22,16 @@ function RegistroUsuario() {
 
   const enviarDatos = (event) => {
     event.preventDefault();
-    toast.success("entro a signup");
+    signUpService(formulario)
+    .then(async response => {
+        const data = await response.data.data;
+        console.log(data);
+        toast.success(response.data.message);
+    }).catch(error => {
+        console.log(error);
+        toast.error("No se pudo registrar la cuenta.");
+    })
+    
   };
 
   return (
@@ -119,6 +130,7 @@ function RegistroUsuario() {
               </div>
             </div>
 
+            {/* input password */}
             <div>
               <div className="flex items-center justify-between">
                 <label
