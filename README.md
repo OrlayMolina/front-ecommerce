@@ -30,12 +30,12 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
 
 <b>Linkedin</b>
 
-<a href="https://www.linkedin.com/in/orlay-andres-molina-gomez-71b470241/" target="_blank">
-![linkedin](https://github.com/OrlayMolina/front-ecommerce/assets/111409267/155408b4-f263-48c3-b637-0d65706046a9)
+<a href="https://www.linkedin.com/in/orlay-andres-molina-gomez-71b470241/" target="_blank" rel="noreferrer">
+ <img src="https://github.com/devicons/devicon/blob/master/icons/linkedin/linkedin-original-wordmark.svg" alt="linkedin" width="40" height="40" />
 </a>
 
 <b>Proyecto terminado</b>
 
-<a href="https://ecommerce-ucamp.netlify.app/" target="_blank">
-![react](https://github.com/OrlayMolina/front-ecommerce/assets/111409267/07631129-d409-4450-94eb-34a1f0b3ea07)
-</a>
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" />
+  </a>
