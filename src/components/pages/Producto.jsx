@@ -20,13 +20,14 @@ function Producto() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="col-span-12">
-        <div className="card mb-4">
-          <img src={product.image} className="w-full h-auto" alt="test" />
+        <div className="mb-4">
+          <img src={product.image} className="w-auto h-auto" alt="test" />
             {console.log(product.image)}
           <div className="card-body">
             <h3 className="text-lg font-bold">${product.price}</h3>
             <h4 className="text-xl font-bold">{product.name}</h4>
             <p className="text-gray-700">{product.description}</p>
+            <p className="text-gray-700">Disponibles {product.stock} unidades</p>
           </div>
         </div>
       </div>
