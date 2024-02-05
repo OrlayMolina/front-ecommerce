@@ -51,6 +51,22 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
 
 <br>
 
+<hr>
+
+## Variables de entorno
+
+### FRONT
+
+VITE_API_URL
+VITE_TKN_NAME
+VITE_PAYPAL_ID
+
+### BACK
+
+MONGO_DB
+PORT
+JWT_SIGNATURE
+
 <b>Linkedin</b>
 
 <a href="https://www.linkedin.com/in/orlay-andres-molina-gomez-71b470241/" target="_blank" rel="noreferrer">
