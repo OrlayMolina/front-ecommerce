@@ -57,15 +57,15 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
 
 ### FRONT
 
-<p>VITE_API_URL</p>
-<p>VITE_TKN_NAME</p>
-<p>VITE_PAYPAL_ID</p>
+<ul>VITE_API_URL</ul>
+<ul>VITE_TKN_NAME</ul>
+<ul>VITE_PAYPAL_ID</ul>
 
 ### BACK
 
-<p>MONGO_DB</p>
-<p>PORT</p>
-<p>JWT_SIGNATURE</p>
+<ul>MONGO_DB</ul>
+<ul>PORT</ul>
+<ul>JWT_SIGNATURE</ul>
 
 <b>Linkedin</b>
 
