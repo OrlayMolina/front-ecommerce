@@ -72,11 +72,11 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
 <b>FrontEnd Repository</b>
   
   <a href="https://github.com/OrlayMolina/front-ecommerce" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg" alt="github" width="40" height="40" />
   </a>
 
   <b>BackEnd Repository</b>
   
   <a href="https://github.com/OrlayMolina/api-ecommerce" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
+    <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original-wordmark.svg" alt="github" width="40" height="40" />
   </a>
