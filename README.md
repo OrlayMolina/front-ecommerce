@@ -57,8 +57,26 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
  <img src="https://github.com/devicons/devicon/blob/master/icons/linkedin/linkedin-original-wordmark.svg" alt="linkedin" width="40" height="40" />
 </a>
 
-<b>Proyecto terminado</b>
+<b>FrontEnd Page</b>
 
   <a href="https://ecommerce-ucamp.netlify.app/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40" />
+  </a>
+
+<b>BackEnd API</b>
+
+  <a href="https://api-ecommerce-csqb.onrender.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
+  </a>
+
+<b>FrontEnd Repository</b>
+  
+  <a href="https://github.com/OrlayMolina/front-ecommerce" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
+  </a>
+
+  <b>BackEnd Repository</b>
+  
+  <a href="https://github.com/OrlayMolina/api-ecommerce" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40" />
   </a>
