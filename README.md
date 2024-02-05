@@ -34,9 +34,15 @@ Ecommerce creado en React, Javascript, React-Router-DOM como requisito para UCam
 <hr>
 
 <br>
-<b> Página inicial</b>
+<b> Login</b>
 
 ![login](https://github.com/OrlayMolina/front-ecommerce/assets/111409267/5778aa9f-092f-4b26-869a-89f923a804e7)
+
+<br>
+
+<br>
+<b> Home </b>
+![home](https://github.com/OrlayMolina/front-ecommerce/assets/111409267/dae184ea-1d67-4215-a6c7-91a09a5e6073)
 
 <br>
 
