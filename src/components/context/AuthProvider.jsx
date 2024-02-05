@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
         const tokenDecoded = jwtDecode(token);
         if(tokenDecoded){
             setIsLogged(true);
-            setUser({tokenDecoded});
+            setUser(tokenDecoded);
             window.localStorage.setItem(import.meta.env.VITE_TKN_NAME, token);
         }
     }
